@@ -1,0 +1,43 @@
+<?php
+
+$viewModel = $block->getData('view_model');
+$formKey = $viewModel->getFormKey();
+$baseUrl = $viewModel->getBaseUrl();
+?>
+
+<form class="form" action="<?= $baseUrl . 'abhinay/businessregistration/save' ?>" method="post">
+    <fieldset class="fieldset bussiness-info">
+        <legend class="legend"><span><?= $escaper->escapeHtml(__('Business Information')) ?></span></legend><br>
+        <div class="field required">
+            <label for="company_name" class="label"><span><?= $escaper->escapeHtml(__('Company Name')) ?></span></label>
+            <div class="control">
+                <input id="company_name" type="text" name="company_name" value="" placeholder="Company Name" class="input-text" maxlength="128" required="required">
+            </div>
+        </div>
+        <div class="field required">
+            <label for="incorporate_date" class="label"><span><?= $escaper->escapeHtml(__('Incorporate Date')) ?></span></label>
+            <div class="control">
+                <input id="incorporate_date" type="datetime-local" name="incorporate_date" value="" placeholder="Incorporate Date" class="input-text" maxlength="128" required="required">
+            </div>
+        </div>
+        <div class="field required">
+            <label for="area" class="label"><span><?= $escaper->escapeHtml(__('Area')) ?></span></label>
+            <div class="control">
+                <select id="area" name="area" title="<?= 'Area' ?>" class="validate-select area">
+                    <option value=""><?= $escaper->escapeHtml(__('Please select your work area')) ?>
+                    </option>
+                    <option value="ecommerce"><?= 'Ecommerce'; ?></option>
+                    <option value="it"><?= 'IT'; ?></option>
+                    <option value="hardware"><?= 'Hardware'; ?></option>
+                </select>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset class="fieldset submit-form">
+        <div class="actions">
+            <button type="submit" title="Search" class="action primary" aria-label="Search" value="Submit">
+                <?= 'Submit'; ?>
+            </button>
+        </div>
+    </fieldset>
+</form>
